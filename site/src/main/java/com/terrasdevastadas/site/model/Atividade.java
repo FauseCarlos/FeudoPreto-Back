@@ -73,6 +73,9 @@ public class Atividade implements Serializable {
 		this.usuario = usuario;
 	}
 	
+	public Long getUsuario_id() {
+		return usuario.getId();
+	}
 
 	public boolean isConcluida() {
 		return concluida;
