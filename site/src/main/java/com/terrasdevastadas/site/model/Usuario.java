@@ -13,6 +13,8 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name="tb_usuarios", schema="terras_devastadas") 
@@ -35,6 +37,7 @@ public class Usuario {
 	private Long pontos;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="usuario")
+	@JsonManagedReference
 	private List<Atividade> atividades;
 	
 	public Long getId() {

@@ -28,12 +28,12 @@ public class UsuarioController {
 	@Autowired 
     private UsuarioService usuarioService;
 
-//    @GetMapping("/")
-//    public ResponseEntity<List<Usuario>> getAllUsuarios(){
-//
-//        List<Usuario> usuario = usuarioService.getAllUsuarios();
-//        return new ResponseEntity<>(usuario, usuario == null  || usuario.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
-//    }
+    @GetMapping("/")
+    public ResponseEntity<List<Usuario>> getAllUsuarios(){
+
+        List<Usuario> usuario = usuarioService.getAllUsuarios();
+        return new ResponseEntity<>(usuario, usuario == null  || usuario.isEmpty() ? HttpStatus.NO_CONTENT : HttpStatus.OK);
+    }
     
     @GetMapping(value = {"/{id}"})
     public ResponseEntity<Optional<Usuario>> getById(@PathVariable Long id){

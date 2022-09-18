@@ -1,6 +1,7 @@
 package com.terrasdevastadas.site.service;
 
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -30,13 +31,11 @@ public class UsuarioService {
     }
 	
 	
-	
-//	public List<Usuario> getAllUsuarios(){
-//
-//	        return usuarioRepository.findAll();
-//	    }
-//	 
-	
+	public List<Usuario> getAllUsuarios(){
+
+	        return usuarioRepository.findAll();
+	    }
+	 
 	
 	public Optional<Usuario> getById(Long id){
 		
@@ -89,7 +88,7 @@ public class UsuarioService {
 	}
     
     
-	 public Usuario update(Usuario usuario, Long id){
+    public Usuario update(Usuario usuario, Long id){
 
 		 Usuario novoUsuario = usuarioRepository.findById(id).get();
 

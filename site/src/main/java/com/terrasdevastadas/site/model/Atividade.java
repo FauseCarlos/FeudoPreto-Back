@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.terrasdevastadas.site.searialize.AtividadeSerializer;
 
@@ -36,7 +37,7 @@ public class Atividade implements Serializable {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="id_usuario", nullable = false)
-//	@JsonBackReference
+	@JsonBackReference
 	private Usuario usuario;
 	
 
@@ -72,9 +73,6 @@ public class Atividade implements Serializable {
 		this.usuario = usuario;
 	}
 	
-	public Long getUsuario_id(){
-	    return usuario.getId();
-	}
 
 	public boolean isConcluida() {
 		return concluida;

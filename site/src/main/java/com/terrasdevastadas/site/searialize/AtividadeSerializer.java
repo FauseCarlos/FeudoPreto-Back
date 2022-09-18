@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.terrasdevastadas.site.model.Atividade;
-import com.terrasdevastadas.site.model.Usuario;
 
 public class AtividadeSerializer extends StdSerializer<Atividade> {
 	
@@ -24,11 +23,8 @@ public class AtividadeSerializer extends StdSerializer<Atividade> {
         jg.writeStartObject();
         jg.writeStringField("nome", atividade.getNome());
         jg.writeStringField("descrição", atividade.getDescrição());
-        jg.writeBooleanField("descrição", atividade.isConcluida());
-        Usuario usuario = atividade.getUsuario();
-        jg.writeObjectFieldStart("usuario");
-        jg.writeNumberField("id", usuario.getId());
-    
+        jg.writeBooleanField("concluida", atividade.isConcluida());
+  
         jg.writeEndObject();
     }
 
